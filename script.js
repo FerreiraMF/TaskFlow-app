@@ -30,10 +30,28 @@ function renderTasks() {
   taskListElement.innerHTML = "";
 
   tasks.forEach(function (task) {
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
+    checkbox.addEventListener("change", function () {
+      task.completed = checkbox.checked;
+
+      renderTasks();
+    });
+
     const taskCard = document.createElement("div");
     taskCard.className = "task-card";
+    const taskTitle = document.createElement("span");
+    taskTitle.className = "task-title";
 
-    taskCard.innerText = task.title;
+    checkbox.checked = task.completed;
+    taskTitle.innerText = task.title;
+    if (task.completed) {
+      taskTitle.classList.add("completed");
+    }
+
+    taskCard.append(checkbox);
+    taskCard.append(taskTitle);
 
     taskListElement.appendChild(taskCard);
   });
