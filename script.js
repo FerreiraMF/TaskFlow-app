@@ -15,6 +15,7 @@ function addTask() {
   }
 
   const newTask = {
+    id: crypto.randomUUID(),
     title: task,
     completed: false,
   };
@@ -44,16 +45,31 @@ function renderTasks() {
     const taskTitle = document.createElement("span");
     taskTitle.className = "task-title";
 
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "delete-button";
+
     checkbox.checked = task.completed;
     taskTitle.innerText = task.title;
+    deleteButton.innerText = "Excluir";
     if (task.completed) {
       taskTitle.classList.add("completed");
     }
 
     taskCard.append(checkbox);
     taskCard.append(taskTitle);
+    taskCard.appendChild(deleteButton);
 
     taskListElement.appendChild(taskCard);
+
+    deleteButton.addEventListener("click", function () {
+      const taskIndex = tasks.findIndex(function (currentTask) {
+        return currentTask.id === task.id;
+      });
+
+      tasks.splice(taskIndex, 1);
+
+      renderTasks();
+    });
   });
 }
 
