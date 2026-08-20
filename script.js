@@ -2,7 +2,7 @@ const inputTask = document.querySelector("#input-task");
 
 const buttonTask = document.querySelector("#add-task");
 
-const tasks = [];
+let tasks = [];
 
 const taskListElement = document.querySelector(".task-list");
 
@@ -21,6 +21,8 @@ function addTask() {
   };
 
   tasks.push(newTask);
+
+  saveTasks();
   renderTasks();
 
   inputTask.value = "";
@@ -37,6 +39,7 @@ function renderTasks() {
     checkbox.addEventListener("change", function () {
       task.completed = checkbox.checked;
 
+      saveTasks();
       renderTasks();
     });
 
@@ -73,6 +76,7 @@ function renderTasks() {
 
       tasks.splice(taskIndex, 1);
 
+      saveTasks();
       renderTasks();
     });
 
@@ -85,9 +89,24 @@ function renderTasks() {
 
       task.title = newTitle.trim();
 
+      saveTasks();
       renderTasks();
     });
   });
 }
 
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  const savedTasks = localStorage.getItem("tasks");
+  if (savedTasks !== null) {
+    tasks = JSON.parse(savedTasks);
+  }
+}
+
 buttonTask.addEventListener("click", addTask);
+
+loadTasks();
+renderTasks();
