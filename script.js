@@ -48,15 +48,20 @@ function renderTasks() {
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete-button";
 
+    const editButton = document.createElement("button");
+    editButton.className = "edit-button";
+
     checkbox.checked = task.completed;
     taskTitle.innerText = task.title;
     deleteButton.innerText = "Excluir";
+    editButton.innerText = "Editar";
     if (task.completed) {
       taskTitle.classList.add("completed");
     }
 
     taskCard.append(checkbox);
     taskCard.append(taskTitle);
+    taskCard.appendChild(editButton);
     taskCard.appendChild(deleteButton);
 
     taskListElement.appendChild(taskCard);
@@ -67,6 +72,18 @@ function renderTasks() {
       });
 
       tasks.splice(taskIndex, 1);
+
+      renderTasks();
+    });
+
+    editButton.addEventListener("click", function () {
+      const newTitle = prompt("Editar tarefa: ", task.title);
+
+      if (newTitle === null || newTitle.trim() === "") {
+        return;
+      }
+
+      task.title = newTitle.trim();
 
       renderTasks();
     });
