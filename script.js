@@ -124,25 +124,34 @@ function loadTasks() {
   }
 }
 
+function setActiveFilter(activebutton) {
+  buttonPendingFilter.classList.remove("active");
+  buttonAllFilter.classList.remove("active");
+  buttonCompletedFilter.classList.remove("active");
+
+  activebutton.classlist.add("active");
+}
+
 buttonTask.addEventListener("click", addTask);
 
 buttonPendingFilter.addEventListener("click", function () {
   currentFilter = "pending";
   renderTasks();
-  console.log(currentFilter);
+  setActiveFilter(buttonPendingFilter);
 });
 
 buttonAllFilter.addEventListener("click", function () {
   currentFilter = "all";
   renderTasks();
-  console.log(currentFilter);
+  setActiveFilter(buttonAllFilter);
 });
 
 buttonCompletedFilter.addEventListener("click", function () {
   currentFilter = "completed";
   renderTasks();
-  console.log(currentFilter);
+  setActiveFilter(buttonCompletedFilter);
 });
 
 loadTasks();
 renderTasks();
+setActiveFilter(buttonAllFilter);
