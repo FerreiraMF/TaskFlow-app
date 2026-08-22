@@ -2,7 +2,13 @@ const inputTask = document.querySelector("#input-task");
 
 const buttonTask = document.querySelector("#add-task");
 
+const buttonAllFilter = document.querySelector("#all-task");
+const buttonPendingFilter = document.querySelector("#pending-task");
+const buttonCompletedFilter = document.querySelector("#completed-task");
+
 let tasks = [];
+
+let currentFilter = "all";
 
 const taskListElement = document.querySelector(".task-list");
 
@@ -32,7 +38,19 @@ function addTask() {
 function renderTasks() {
   taskListElement.innerHTML = "";
 
-  tasks.forEach(function (task) {
+  let filteredTasks = tasks;
+
+  if (currentFilter === "pending") {
+    filteredTasks = tasks.filter(function (task) {
+      return task.completed === false;
+    });
+  } else if (currentFilter === "completed") {
+    filteredTasks = tasks.filter(function (task) {
+      return task.completed === true;
+    });
+  }
+
+  filteredTasks.forEach(function (task) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
@@ -107,6 +125,24 @@ function loadTasks() {
 }
 
 buttonTask.addEventListener("click", addTask);
+
+buttonPendingFilter.addEventListener("click", function () {
+  currentFilter = "pending";
+  renderTasks();
+  console.log(currentFilter);
+});
+
+buttonAllFilter.addEventListener("click", function () {
+  currentFilter = "all";
+  renderTasks();
+  console.log(currentFilter);
+});
+
+buttonCompletedFilter.addEventListener("click", function () {
+  currentFilter = "completed";
+  renderTasks();
+  console.log(currentFilter);
+});
 
 loadTasks();
 renderTasks();
