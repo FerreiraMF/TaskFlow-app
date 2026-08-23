@@ -78,6 +78,7 @@ function renderTasks() {
     editButton.innerText = "Editar";
     if (task.completed) {
       taskTitle.classList.add("completed");
+      taskCard.classList.add("task-completed");
     }
 
     taskCard.append(checkbox);
@@ -129,7 +130,7 @@ function setActiveFilter(activebutton) {
   buttonAllFilter.classList.remove("active");
   buttonCompletedFilter.classList.remove("active");
 
-  activebutton.classlist.add("active");
+  activebutton.classList.add("active");
 }
 
 buttonTask.addEventListener("click", addTask);

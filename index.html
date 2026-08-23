@@ -7,21 +7,23 @@
     <title>TaskFlow</title>
   </head>
   <body>
-    <div class="task">
-      <h1>TaskFlow</h1>
-      <input
-        type="text"
-        id="input-task"
-        placeholder="Digite sua próxima tarefa..."
-      />
-      <button id="add-task">Adicionar tarefa</button>
-    </div>
-    <div class="filter-task">
-      <button id="all-task" type="button">Todos</button>
-      <button id="pending-task" type="button">Pendentes</button>
-      <button id="completed-task" type="button">Concluídas</button>
-    </div>
-    <div class="task-list"></div>
+    <main>
+      <h1 id="title">TaskFlow</h1>
+      <div class="task">
+        <input
+          type="text"
+          id="input-task"
+          placeholder="Digite sua próxima tarefa..."
+        />
+        <button id="add-task">Adicionar tarefa</button>
+      </div>
+      <div class="filter-task">
+        <button id="all-task" type="button">Todos</button>
+        <button id="pending-task" type="button">Pendentes</button>
+        <button id="completed-task" type="button">Concluídas</button>
+      </div>
+      <div class="task-list"></div>
+    </main>
 
     <script src="script.js"></script>
   </body>
