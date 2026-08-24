@@ -1,0 +1,72 @@
+# ✅ TaskFlow
+
+Uma aplicação simples e intuitiva para criação e gerenciamento de tarefas, desenvolvida com HTML, CSS e JavaScript.
+
+O TaskFlow permite organizar atividades do dia a dia, acompanhar tarefas pendentes e concluídas e manter os dados salvos no navegador.
+
+## ✨ Funcionalidades
+
+- Adicionar novas tarefas
+- Adicionar tarefas pressionando `Enter`
+- Editar tarefas existentes
+- Excluir tarefas
+- Marcar tarefas como concluídas
+- Filtrar por Todas, Pendentes e Concluídas
+- Persistência das tarefas no navegador
+- Interface responsiva para desktop e dispositivos móveis
+
+## 🛠️ Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Git
+- GitHub
+
+## 🧠 O que aprendi
+
+Durante o desenvolvimento do TaskFlow, pude praticar e consolidar conceitos importantes de desenvolvimento front-end, como:
+
+- Manipulação do DOM com JavaScript
+- Manipulação de arrays utilizando `filter()` e `findIndex()`
+- Eventos e interação do usuário
+- Persistência de dados utilizando `localStorage`
+- Criação de layouts utilizando Flexbox
+- Desenvolvimento de interfaces responsivas com Media Queries
+- Organização e reutilização de funções
+- Testes de funcionalidades e identificação de problemas através de práticas de QA
+
+## 💻 Como executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/FerreiraMF/TaskFlow-app.git
+```
+
+Acesse a pasta do projeto e abra o arquivo `index.html` no navegador.
+
+Não é necessária a instalação de dependências.
+
+## 📖 Como usar
+
+1. Digite uma tarefa no campo de texto.
+2. Clique em **Adicionar tarefa** ou pressione `Enter`.
+3. Marque o checkbox quando concluir uma tarefa.
+4. Utilize os filtros **Todos**, **Pendentes** e **Concluídas** para organizar a visualização.
+5. Utilize **Editar** ou **Excluir** para gerenciar uma tarefa.
+
+## 🌐 Demonstração
+
+🔗 [Acessar TaskFlow](https://ferreiramf.github.io/TaskFlow-app/)
+
+## 📸 Preview
+
+![Preview do TaskFlow](assets/taskflow-desktop.png)
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Mateus Ferreira Freitas**.
+
+- [LinkedIn](https://www.linkedin.com/in/mateus-ferreira-freitas/)
+- [GitHub](https://github.com/FerreiraMF)
