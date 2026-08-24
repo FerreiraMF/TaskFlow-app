@@ -142,6 +142,12 @@ function setActiveFilter(activebutton) {
 
 buttonTask.addEventListener("click", addTask);
 
+inputTask.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
 buttonPendingFilter.addEventListener("click", function () {
   currentFilter = "pending";
   renderTasks();

@@ -164,6 +164,11 @@ main {
   border: 1px solid #bbf7d0;
 }
 
+.task-title {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 480px) {
   main {
     padding: 15px;
