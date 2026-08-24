@@ -63,9 +63,13 @@ function renderTasks() {
 
     const taskCard = document.createElement("div");
     taskCard.className = "task-card";
+    const taskContent = document.createElement("div");
+    taskContent.className = "task-content";
     const taskTitle = document.createElement("span");
     taskTitle.className = "task-title";
 
+    const taskActions = document.createElement("div");
+    taskActions.className = "task-actions";
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete-button";
 
@@ -81,10 +85,13 @@ function renderTasks() {
       taskCard.classList.add("task-completed");
     }
 
-    taskCard.append(checkbox);
-    taskCard.append(taskTitle);
-    taskCard.appendChild(editButton);
-    taskCard.appendChild(deleteButton);
+    taskContent.append(checkbox);
+    taskContent.append(taskTitle);
+    taskActions.appendChild(editButton);
+    taskActions.appendChild(deleteButton);
+
+    taskCard.appendChild(taskContent);
+    taskCard.appendChild(taskActions);
 
     taskListElement.appendChild(taskCard);
 

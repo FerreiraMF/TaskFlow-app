@@ -112,8 +112,16 @@ main {
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 }
 
-.task-title {
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
 }
 
 .edit-button {
@@ -166,6 +174,16 @@ main {
   }
 
   .task-card {
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .task-content {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
